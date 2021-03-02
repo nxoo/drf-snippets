@@ -41,7 +41,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'quickstart.polls.QuickstartConfig',
+    'quickstart.apps.QuickstartConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
