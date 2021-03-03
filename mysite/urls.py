@@ -15,9 +15,11 @@ Including another URLconf
 """
 import environ
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 env = environ.Env()
 urlpatterns = [
+    path('api/', include('quickstart.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(env('ADMIN_URL'), admin.site.urls),
 ]
