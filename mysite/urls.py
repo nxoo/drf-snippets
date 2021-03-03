@@ -19,6 +19,7 @@ from django.urls import path, include
 
 env = environ.Env()
 urlpatterns = [
+    path('', include('snippets.urls')),
     path('api/', include('quickstart.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(env('ADMIN_URL'), admin.site.urls),
