@@ -20,6 +20,6 @@ from django.urls import path, include
 env = environ.Env()
 urlpatterns = [
     path('', include('snippets.urls')),
-    path('auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api-auth/', include('rest_framework.urls')),
     path(env('ADMIN_URL'), admin.site.urls),
 ]
