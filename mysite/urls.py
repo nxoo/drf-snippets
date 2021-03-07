@@ -16,10 +16,12 @@ Including another URLconf
 import environ
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views
 
 env = environ.Env()
 urlpatterns = [
     path('', include('snippets.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path(env('ADMIN_URL'), admin.site.urls),
 ]
